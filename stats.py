@@ -5,14 +5,14 @@ def get_word_count(text):
 
 # lists and counts the number of characters used in the book.
 def get_character_count (text):
-    characters = {}
+    character_count = {}
     lowercase_text = text.lower()
     words = lowercase_text.split()
     # loops through the entire text word by word and splits them into characters
     for word in words:
         for char in word:
-            if char not in characters:
-                characters[char] = 1
+            # if the character does not exist yet, add it to the dictionary, else increase its count
+            if char not in character_count:
+                character_count[char] = 1
             else:
-                pass
-    print (characters)
+                character_count[char] += 1
