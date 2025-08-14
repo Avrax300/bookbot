@@ -19,12 +19,17 @@ def get_character_count (text):
     return character_count
 
 def sort_characters(character_count):
-    sorted_chars = []
+    counted_chars = []
     # creates individual dictionaries for each character and add them to a list
     for character in character_count:
         extracted_chars = {}
         extracted_chars["char"] = character
         extracted_chars["num"] = character_count[character]
-        sorted_chars.append(extracted_chars)
-    print(sorted_chars)
+        counted_chars.append(extracted_chars)
+        # orders the list in decreasing order
+        counted_chars.sort(reverse=True, key=sort_on)
+    print(counted_chars)
 
+def sort_on(extracted_chars):
+    return extracted_chars["num"]
+    
