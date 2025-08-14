@@ -10,8 +10,13 @@ def get_book_text():
 
 def main():
     text = get_book_text()
+    print(f"============ BOOKBOT ============")
+    print(f"Analyzing book found at books/frankenstein.txt...")
+    print(f"----------- Word Count ----------")
     get_word_count(text)
     character_count = get_character_count(text)
+    print(f"--------- Character Count -------")
     sort_characters(character_count)
+    print(f"============= END ===============")
 
 main()
