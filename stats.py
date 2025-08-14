@@ -12,10 +12,11 @@ def get_character_count (text):
     for word in words:
         for char in word:
             # if the character does not exist yet, add it to the dictionary, else increase its count
-            if char not in character_count:
-                character_count[char] = 1
-            else:
-                character_count[char] += 1
+            if char.isalnum():
+                if char not in character_count:
+                    character_count[char] = 1
+                else:
+                    character_count[char] += 1
     return character_count
 
 def sort_characters(character_count):
@@ -28,7 +29,9 @@ def sort_characters(character_count):
         counted_chars.append(extracted_chars)
         # orders the list in decreasing order
         counted_chars.sort(reverse=True, key=sort_on)
-    print(counted_chars)
+    # prints the ordered list
+    for char in counted_chars:
+        print(f"{char["char"]}: {char["num"]}")
 
 def sort_on(extracted_chars):
     return extracted_chars["num"]
