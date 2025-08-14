@@ -16,3 +16,15 @@ def get_character_count (text):
                 character_count[char] = 1
             else:
                 character_count[char] += 1
+    return character_count
+
+def sort_characters(character_count):
+    sorted_chars = []
+    # creates individual dictionaries for each character and add them to a list
+    for character in character_count:
+        extracted_chars = {}
+        extracted_chars["char"] = character
+        extracted_chars["num"] = character_count[character]
+        sorted_chars.append(extracted_chars)
+    print(sorted_chars)
+

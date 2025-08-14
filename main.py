@@ -1,5 +1,6 @@
 from stats import get_word_count
 from stats import get_character_count
+from stats import sort_characters
 
 # converts the content of frankenstein.txt as a string.
 def get_book_text():
@@ -11,5 +12,6 @@ def main():
     text = get_book_text()
     get_word_count(text)
     character_count = get_character_count(text)
+    sort_characters(character_count)
 
 main()
