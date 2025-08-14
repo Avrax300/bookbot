@@ -4,14 +4,14 @@ from stats import sort_characters
 
 # converts the content of frankenstein.txt as a string.
 def get_book_text():
-    with open("books/frankenstein.txt") as f:
+    with open("[PATH_TO/BOOK]") as f:
         text = f.read()
         return text
 
 def main():
     text = get_book_text()
     print(f"============ BOOKBOT ============")
-    print(f"Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at [PATH_TO/BOOK]...")
     print(f"----------- Word Count ----------")
     get_word_count(text)
     character_count = get_character_count(text)
